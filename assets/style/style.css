@@ -1,0 +1,248 @@
+@font-face {
+    font-family: 'GothamPro';
+    src: url('../fonts/GothamPro.eot');
+    src: url('../fonts/GothamPro.eot') format('embedded-opentype'),
+         url('../fonts/GothamPro.woff2') format('woff2'),
+         url('../fonts/GothamPro.woff') format('woff'),
+         url('../fonts/GothamPro.ttf') format('truetype'),
+         url('../fonts/GothamPro.svg#GothamPro') format('svg');
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    background-color: #fff;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #3e4142;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3, p {
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+.canvas {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart {
+    width: 500px;
+    height: 500px;
+    position: relative;
+}
+
+.chart__unit {
+    fill: none;
+    stroke-width: 1;
+    position: relative;
+}
+
+.chart__unit:nth-child(1) {
+    stroke: #ececec;
+    stroke-dasharray: 100 10;
+    stroke-dashoffset: 30;
+    stroke-linecap: round;
+}
+
+.chart__unit:nth-child(2) {
+    stroke: #70a84b;
+    stroke-dasharray: 30 100;
+    stroke-dashoffset: -11;
+    stroke-linecap: round;
+    stroke-width: 1.4;
+
+    animation-name: render;
+    animation-duration: .8s;
+}
+
+.chart__unit:nth-child(3) {
+    stroke: #fcd329;
+    stroke-dasharray: 51 69;
+    stroke-dashoffset: 40;
+    stroke-linecap: round;
+    stroke-width: 1.4;
+
+    animation-name: render;
+    animation-duration: .8s;
+}
+
+.chart__icon {
+    position: absolute;
+    top: 40px;
+    left: 222px;
+}
+
+.chart__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 27%;;
+    left: 33.5%;
+}
+.chart__value {
+    position: relative;
+    font-family: 'Gotham Pro', sans-serif;
+    
+}
+.chart__value__main {
+    margin-bottom: 10px;
+
+    font-size: 60px;
+    text-align: center;
+}
+
+.chart__value__main span {
+    font-size: 32px;
+}
+
+.chart__percent {
+    position: absolute;
+    top: 4px;
+    right: 0;
+
+    font-size: 20px;
+    color: #9b9b9a;
+}
+
+
+.chart__title {
+    margin-bottom: 10px;
+
+    font-size: 25px;
+}
+
+.chart__subtitle {
+    margin-bottom: 5px;
+
+    font-size: 22px;
+    color: #fcd329;
+}
+
+.chart__text {
+    margin-bottom: 10px;
+
+    font-size: 13px;
+    color: #9b9b9a;
+    text-align: center;
+}
+
+.chart__change__group {
+    display: flex;
+
+    font-size: 20px;
+    color: #70a84b;
+}
+
+.chart__change__value  {
+    margin-left: 10px;
+}
+
+.legend {
+    display: flex;
+    flex-direction: column;
+}
+
+.legend__item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.legend__name {
+    width: 40%;
+    display: flex;
+    justify-content: flex-start;
+    margin-right: 25px;
+
+    font-size: 17px;
+}
+
+.legend__results {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-right: 25px;
+
+    font-size: 15px;
+}
+
+.legend__amount {
+    display: flex;
+    margin-top: 10px;
+
+    color: #9b9b9a;
+}
+
+.legend__amount__value {
+    margin-right: 5px;
+}
+
+.legend__change {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 5px;
+
+    width: 130px;
+    height: 45px;
+
+    background-color: #fafafa;
+    border: solid 1px #e7e7e7;
+    border-radius: 10px;
+
+}
+
+.change__color {
+    width: 40%;
+    height: 45px;
+    border-radius: 10px 0 0 10px;
+}
+
+.line {
+    position: absolute;
+    left: 650px;
+    top: 350px;
+    width: 100px;
+    height: 360px;
+    background-color: transparent;
+}
+
+@keyframes render {
+    10% {
+      stroke-dasharray: 0 90;
+    }
+}
